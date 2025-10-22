@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetalleActivity">
@@ -18,16 +17,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269" />
+        app:layout_constraintVertical_bias="0.293" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="402dp"
-        android:layout_height="320dp"
-        android:layout_marginTop="96dp"
+    <Button
+        android:id="@+id/btnSolicitarPermiso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Solicitar Permisos"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDetalle"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/sibirischer_tiger_de_edit02"
-        tools:layout_editor_absoluteX="4dp" />
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
