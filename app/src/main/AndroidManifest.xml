@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wirelessapp">
         <activity
+            android:name=".ActivityLogin"
+            android:exported="false" />
+        <activity
             android:name=".BluetoothActivity"
             android:exported="false" />
         <activity
