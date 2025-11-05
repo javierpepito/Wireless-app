@@ -38,17 +38,34 @@ class ActivityLogin : AppCompatActivity() {
         btnRegister.setOnClickListener {
             val email = emailInput.text.toString()
             val password = passwordInput.text.toString()
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Log.d("Firebase", "Usuario registrado")
-                    }
+
+            auth.createUserWithEmailAndPassword(
+                email,
+                password
+            ).addOnCompleteListener { task ->
+                if (task.isSuccessful){
+                    Log.d("Firebase Auth", "Usuario registrado: $email")
                 }
+                else {
+                    Log.d("Firebase Auth", "Usuario no se pudo registrar: $email")
+                }
+            }
         }
 
         btnLogin.setOnClickListener {
-            //rellenar
-        }
+            val email = emailInput.text.toString()
+            val password = passwordInput.text.toString()
 
+            auth.signInWithEmailAndPassword(
+                email,
+                password
+            ).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d("Firebase Auth", "Usuario inició sesión: $email")
+                } else {
+                    Log.d("Firebase Auth", "Usuario no pudo iniciar sesión: $email")
+                }
+            }
+        }
     }
 }
