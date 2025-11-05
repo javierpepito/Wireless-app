@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wirelessapp">
         <activity
+            android:name=".ToDoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ActivityLogin"
             android:exported="false" />
         <activity

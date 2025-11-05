@@ -13,10 +13,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class ActivityLogin : AppCompatActivity() {
 
-    private lateinit var emailInput: TextView
-    private lateinit var passwordInput: TextView
-    private lateinit var btnLogin: Button
-    private lateinit var btnRegister: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,44 +24,5 @@ class ActivityLogin : AppCompatActivity() {
             insets
         }
 
-        emailInput = findViewById(R.id.emailInput)
-        passwordInput = findViewById(R.id.passwordInput)
-        btnLogin = findViewById(R.id.btnLogin)
-        btnRegister = findViewById(R.id.btnRegister)
-
-        val auth = FirebaseAuth.getInstanace()
-
-        btnRegister.setOnClickListener {
-            val email = emailInput.text.toString()
-            val password = passwordInput.text.toString()
-
-            auth.createUserWithEmailAndPassword(
-                email,
-                password
-            ).addOnCompleteListener { task ->
-                if (task.isSuccessful){
-                    Log.d("Firebase Auth", "Usuario registrado: $email")
-                }
-                else {
-                    Log.d("Firebase Auth", "Usuario no se pudo registrar: $email")
-                }
-            }
-        }
-
-        btnLogin.setOnClickListener {
-            val email = emailInput.text.toString()
-            val password = passwordInput.text.toString()
-
-            auth.signInWithEmailAndPassword(
-                email,
-                password
-            ).addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Log.d("Firebase Auth", "Usuario inició sesión: $email")
-                } else {
-                    Log.d("Firebase Auth", "Usuario no pudo iniciar sesión: $email")
-                }
-            }
-        }
     }
 }
